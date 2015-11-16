@@ -1,0 +1,21 @@
+# Selección del lenguaje 
+language: node_js   
+
+node_js:
+  - "4.1" 
+  - "0.12"
+  - "iojs"
+
+install:   # Instalación de dependencias
+  - npm install
+  - npm install -g mocha
+
+script:       # El script que ejecutaremos para que nuestro código funcione y corra los test.
+  - mocha
+
+notifications:   # Notificamos los resultados de los test por correo
+  recipients:
+    - rubenmartin1991@gmail.com
+  email:
+    on_success: change
+    on_failure: always
